@@ -20,7 +20,8 @@ const forecast = ({latitude: lat, longitude: long}, callback) => {
             const data = body.currently
             const temp = data.temperature
             const precipProbability = data.precipProbability
-            const msg = body.daily.data[0].summary + " It is currently " + temp + " degrees (C) out. There is a " + precipProbability + "% chance of rain."
+            const windSpeed = data.windSpeed
+            const msg = body.daily.data[0].summary + " It is currently " + temp + " degrees (C) out. There is a " + precipProbability + "% chance of rain. The wind speed is " + windSpeed + " units."
             callback(undefined, msg)
         }
 
